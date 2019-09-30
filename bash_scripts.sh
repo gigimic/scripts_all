@@ -91,5 +91,5 @@ fi
 # pid is obtained as $$
 # sleep 10 for sleeping for 10 sec
 # man 7 signal 
-# SININT is Ctrl C
+# SIGINT is Ctrl C
 # there is s trap command to trap the signals given

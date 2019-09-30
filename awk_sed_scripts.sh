@@ -37,3 +37,7 @@ cat test.txt | sed -r 's/test/test1/' #replace test with test1.
 cat test.txt | sed -r 's/test/test1/g' # Now it is done globally
 cat test.txt | sed -r '2,4 s/test/test1/g' # Now only on lines 2:4
 cat test.txt | sed -r '3,$ s/test/test1/g' # Now only on lines 3 to end of file
+sed G test.txt #insert a blank line after each line
+sed 'G;G' test.txt #inset two blank lines
+# More useful commands can be found at the following link
+# https://www.geeksforgeeks.org/sed-command-linux-set-2/
