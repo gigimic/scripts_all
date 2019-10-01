@@ -3,12 +3,17 @@
 echo "my bash version is   ${BASH_VERSION}"
 echo "my script name is    ${BASH_SOURCE[0]}"
 
+
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]
 then
   echo "${BASH_SOURCE[0]} ${0}"
   echo "${0} gives you the script name"
 fi
-
+echo "source file name will read and execute the file"
+echo "-----------"
+echo "LSB( Linux Standard Base) information about the Linux distribution. Use command lsb_release -a"
+lsb_release -a
+echo "-----------"
 # echo "$1 $2 are the arguments given to the script"
 echo "use bc for basic arithmetic operations"
 
