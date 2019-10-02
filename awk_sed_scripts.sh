@@ -28,16 +28,20 @@
 # cat test.txt | sed -r '' #prints everything from the test file
 # cat test.txt | sed -r '2,4d' #prints everything except lines 2:4
 # cat test.txt | sed -n -r '2,4p' #prints everything in lines 2:4
-cat test.txt | sed -r '/test/d' #prints lines except test
-cat test.txt | grep test #same as above
-cat test.txt | sed -n -r '/test/p' #prints lines with 'test'
-cat test.txt | sed -r 's/test/test1/' #replace test with test1. 
-# This substitutes the first occurrence of test in a line. 
-# The rest of the test string remain unchanged
-cat test.txt | sed -r 's/test/test1/g' # Now it is done globally
-cat test.txt | sed -r '2,4 s/test/test1/g' # Now only on lines 2:4
-cat test.txt | sed -r '3,$ s/test/test1/g' # Now only on lines 3 to end of file
-sed G test.txt #insert a blank line after each line
-sed 'G;G' test.txt #inset two blank lines
+# cat test.txt | sed -r '/test/d' #prints lines except test
+# cat test.txt | grep test #same as above
+# cat test.txt | sed -n -r '/test/p' #prints lines with 'test'
+# cat test.txt | sed -r 's/test/test1/' #replace test with test1. 
+# # This substitutes the first occurrence of test in a line. 
+# # The rest of the test string remain unchanged
+# cat test.txt | sed -r 's/test/test1/g' # Now it is done globally
+# cat test.txt | sed -r '2,4 s/test/test1/g' # Now only on lines 2:4
+# cat test.txt | sed -r '3,$ s/test/test1/g' # Now only on lines 3 to end of file
+# sed G test.txt #insert a blank line after each line
+# sed 'G;G' test.txt #insert two blank lines
+# sed '5d' test.txt  # delete 5th line of the file
+# sed '$d' test.txt # deletes the last line
+# sed '$ a This line is added after the last line' test.txt
+sed -i '$ a This line is inserted after the last line' test.txt
 # More useful commands can be found at the following link
 # https://www.geeksforgeeks.org/sed-command-linux-set-2/
