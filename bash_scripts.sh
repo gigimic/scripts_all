@@ -83,6 +83,7 @@ does_file_exist() {
     [[ -f "$file" ]] && return 0 || return 1
 }
 
+#if you dont give an argument, i.e. the length of the arguments is zero usage gets called
 [[ $# -eq 0 ]] && usage
 
 if( does_file_exist "$1") then
