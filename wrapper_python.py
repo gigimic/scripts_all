@@ -32,3 +32,18 @@ def factorial(num):
   
 # calling the function. 
 factorial(5) 
+
+def check_false(func):
+    def inner1(*args, **kwargs):
+        func(*args, **kwargs)
+        if(args[0] is False):
+            print('False entry ')
+    return inner1
+
+@check_false
+def add(x,y):
+    print(x+y)
+    return x+y
+
+add(False,2)
+
