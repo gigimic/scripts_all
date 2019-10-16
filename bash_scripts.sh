@@ -92,6 +92,9 @@ else
     echo "File not found"
 fi
 
+# Find a file
+find /home/gigi -name calc.py
+
 # Any variable or function can be declared readonly
 # Ctrl Z is the suspend command
 # pid is obtained as $$
