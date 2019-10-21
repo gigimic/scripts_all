@@ -8,7 +8,7 @@ page = requests.get(my_url3)
 contents = page.content
 
 
-soup = BeautifulSoup(contents, 'html.parser')
+soup = BeautifulSoup(contents, 'lxml')
 # print(soup.prettify())
 links = soup.find_all('a')
 print(len(links))
@@ -24,26 +24,13 @@ print(soup.title.parent.name)
 # for link in soup.find_all('a'):
     # print(link.get('href'))
 
-# table = soup.find('div', attrs = {'id':'eventcldiv'})
-table = soup.findAll('div', attrs = {'class':'container'})
-print(table.h1.text)
-# table1 = table.find('div', attrs = {'id': 'innercontent'})
+# for table in soup.find_all('div', id='eventcldiv'):
+    # for title in table.find_all('li', class_='sstitle'):
+    #     print(title.text)
 
-# table2 = table1.find('div', attrs = {'id': 'innerleft'})
-# table3 = table2.find('div', attrs = {'id': 'inntitlehead'})
-# print(table3.h1.text)
-
-# print(len(table))
-# print(table.text)
-
-# for block in table.findAll('ul'):
-#     print(len(block))
-#     for row in block.findAll('li'): 
-#         # for row in block.findAll('li', attrs = {'class':'sstitle'}): 
-#         people = {}
-#         people['name'] = row.name
-#         print(row.text)
-    
-
-
-# soup.find(id="inntitlehead")
+for table in soup.find_all('div', id='eventcldiv'):
+    for title in table.find_all('ul'):
+        for addres in title.find_all('li'):
+            print(addres.text)
+        print()
+        
