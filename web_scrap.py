@@ -55,4 +55,4 @@ for lists in soup.find_all('ol', class_='css-12yzwg4'):
             print()
             # bookData = pd.DataFrame.from_dict(best_sellers)
             # bookData.to_csv('list_best_sellers.csv')
-            
+        

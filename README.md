@@ -30,3 +30,20 @@ It is known as web driver: it can open a google chrome window, visit a site and 
 Scrapy is a complete spider that can crawl throgh entire website in a systematic way.
 it is a complete webscaping framework. It can be used to manage requests, 
 preserve user sessions, follow redirects, and handle output pipelines.
+
+# Python virtual Environment
+
+Create a fresh virtualenv using Python 3:
+$ python3 -m venv ./venv
+
+Activating a virtualenv 
+source ./venv/bin/activate
+
+insall new libraries to the virtual environment 
+(venv) $ pip install requests
+
+install new libraries and add them to the requirements.txt
+pip install requests && pip freeze > requirements.txt
+
+To get back to the global Python environment, run the following command:
+(venv) $ deactivate
