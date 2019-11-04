@@ -31,3 +31,7 @@ print('Sum over axis:0 : ', a1.sum(axis = 0))
 print('Sum over axis:1 : ', a1.sum(axis = 1))
 print('sq. root: ', np.sqrt(a1))
 print(a2[ : :-1]) #reverse the array
+# create an length 10 integer array of zeroes
+print(np.zeros(10, dtype =int))
+print(np.ones((3,5), dtype=float))
+print(np.full((2,3), 2.55))
