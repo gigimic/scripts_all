@@ -23,16 +23,26 @@ print('Shape : ', a1.shape)
 print('Type of elements: ', a1.dtype.name)
 print('Size in bytes (int64/8)  : ', a1.itemsize)
 print('nbytes  : ', a1.nbytes)
-a2 = np.arange( 10, 40, 5 )
-print('last item : ', a2[-1])
-print('Range of numbers in array : ', a2)
+
+
 print('Sum of elements : ', a1.sum())
 print('Min of elements : ', a1.min())
 print('Max of elements : ', a1.max())
 print('Sum over axis:0 : ', a1.sum(axis = 0))
 print('Sum over axis:1 : ', a1.sum(axis = 1))
 print('sq. root: ', np.sqrt(a1))
+
+a2 = np.arange( 10, 50, 5)
+print('Range of numbers in array : ', a2)
+print('last item : ', a2[-1])
 print(a2[ : :-1]) #reverse the array
+print('every other element : ', a2[::2]) #every other element 
+print('first three elements : ', a2[:3])
+print('index 3 onwards  : ', a2[3:])
+a3 = a2[3:].copy()
+print('copy : ', a3)
+a4 = np.concatenate([a2, a3])
+print('concatenate a2 & a3 : ', a4)
 # create an length 10 integer array of zeroes
 print(np.zeros(10, dtype =int))
 print(np.ones((3,5), dtype=float))
