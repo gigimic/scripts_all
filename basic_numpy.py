@@ -47,3 +47,23 @@ print('concatenate a2 & a3 : ', a4)
 print(np.zeros(10, dtype =int))
 print(np.ones((3,5), dtype=float))
 print(np.full((2,3), 2.55))
+
+# trignometric functions
+theta  = np.linspace(0, np.pi, 7)
+print('theta : ', theta*180/np.pi)
+print('sin(theta) : ', np.sin(theta))
+print('cos(theta) : ', np.cos(theta))
+print('tan(theta) : ', np.tan(theta))
+
+# Exponents and logarithms
+a5 = [1, 2, 3]
+print("x =", a5)
+print("e^x =", np.exp(a5))
+print("2^x =", np.exp2(a5))
+print("3^x =", np.power(3, a5))
+
+a6 = [1, 2, 4, 10]
+print("x =", a6)
+print("ln(x) =", np.log(a6))
+print("log2(x) =", np.log2(a6))
+print("log10(x) =", np.log10(a6))
