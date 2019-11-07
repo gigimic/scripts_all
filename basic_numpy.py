@@ -67,3 +67,10 @@ print("x =", a6)
 print("ln(x) =", np.log(a6))
 print("log2(x) =", np.log2(a6))
 print("log10(x) =", np.log10(a6))
+
+# broadcasting of arrays in numpy
+
+# arithmetic operations can be done on the array
+# a<3 gives a bool array where a is less than 3
+# how many values less than 6 in each row or column 
+# np.sum(x < 6, axis=1)
