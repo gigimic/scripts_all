@@ -74,3 +74,13 @@ print("log10(x) =", np.log10(a6))
 # a<3 gives a bool array where a is less than 3
 # how many values less than 6 in each row or column 
 # np.sum(x < 6, axis=1)
+# fancy indexing and slicing
+# create histograms by binning data
+# sorting arrays
+a7 = [2, 3, 1, 5, 4, 8, 6 ]
+print('sorted array is : ', np.sort(a7))
+# It can be applied to rows and columns too
+#partial sorts, i.e., smallest 3 values in an array
+#nearest neighbours can be found
+#structured arrays
+
