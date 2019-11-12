@@ -1,6 +1,6 @@
 # pandas is like Excel in Python: it uses tables (namely DataFrame) 
 # and operates transformations on the data
-
+import numpy as np
 import pandas as pd
 
 print('Pandas version is : ', pd.__version__)
@@ -42,3 +42,19 @@ data = pd.Series([0.25, 0.5, 0.75, 1.0], index=['2', '5', '3', '7'])
 print('data with numerical indexes: \n', data)
 
 # pandas series can be generated from a python dictionary
+
+#dataframe can be generated from a numpy array
+data1 = pd.DataFrame(np.random.rand(3, 2), columns=['foo', 'bar'], index=['a', 'b', 'c'])
+print(data1)
+
+area = pd.Series({'California': 423967, 'Texas': 695662, 'New York': 141297, 
+'Florida': 170312, 'Illinois': 149995})
+pop = pd.Series({'California': 38332521, 'Texas': 26448193, 'New York': 19651127, 
+'Florida': 19552860, 'Illinois': 12882135})
+data2 = pd.DataFrame({'area':area, 'pop':pop})
+print(data2)
+print(data2['area'])
+print(data2.area)
+data2['density'] = data2['pop'] / data2['area']
+print(data2)
+print(data2[data2.density > 100])
