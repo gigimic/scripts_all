@@ -58,3 +58,9 @@ print(data2.area)
 data2['density'] = data2['pop'] / data2['area']
 print(data2)
 print(data2[data2.density > 100])
+
+A = pd.Series([2, 4, 6], index=[0, 1, 2])
+B = pd.Series([1, 3, 5], index=[1, 2, 3])
+print(A + B)
+print('To get rid of NaN')
+print(A.add(B, fill_value=0))
