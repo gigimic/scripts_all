@@ -52,10 +52,23 @@ nn=len(data1)
 # shape
 print(dataset.shape)
 
+# class distribution
+print(dataset.groupby('class').size())
+types = dataset.groupby('class').groups.keys()
+
+type_classes= [type for type in types]
+
+data_class = [dataset.groupby('class').groups[type_class] for type_class in type_classes] 
+
+# box and whisker plots
+# dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+# pyplot.show()
+
+
 # head
 # print(dataset.head(100))
 kount = 50
-ser = range(kount)
+ser = range(len(data_class[0]))
 labels = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width']
 markers =['^', 'o', 's', 'x']
 fig = pyplot.figure()
@@ -63,10 +76,11 @@ grid_no=221
 for j in range(3):
 	ax1 = fig.add_subplot(grid_no)
 	for i in range(4):
-		ax1.scatter(ser, data1[kount*j:kount*(j+1),i], marker=markers[i], label = names[i])
+		# ax1.scatter(ser, data1[kount*j:kount*(j+1),i], marker=markers[i], label = names[i])
+		ax1.scatter(ser, data1[data_class[j],i], marker=markers[i], label = names[i])
 		if (j == 0): pyplot.legend()
 	grid_no+=1
-# pyplot.show()
+pyplot.show()
 
 
 # pyplot.subplot(224)
@@ -87,15 +101,6 @@ for j in range(3):
 # descriptions
 print(dataset.describe())
 
-# class distribution
-print(dataset.groupby('class').size())
-types = dataset.groupby('class').groups.keys()
-print(types)
-data_class1 = dataset.groupby('class').groups['Iris-setosa']
-print(len(data_class1))
-# box and whisker plots
-# dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
-# pyplot.show()
 
 # # histograms
 # dataset.hist()
