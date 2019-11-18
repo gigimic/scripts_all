@@ -18,6 +18,7 @@ import pandas
 # scikit-learn
 import sklearn
 # print('sklearn: {}'.format(sklearn.__version__))
+import csv
 
 # Load libraries
 from pandas import read_csv
@@ -41,19 +42,57 @@ url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv"
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 dataset = read_csv(url, names=names)
 print(len(dataset))
+data1 = dataset.values
+nn=len(data1)
+# with open('iris_data.csv', 'w') as csvFile:
+#     writer = csv.writer(csvFile)
+#     writer.writerows(data1)
+# csvFile.close()
 
 # shape
 print(dataset.shape)
 
 # head
-# print(dataset.head(20))
+# print(dataset.head(100))
+kount = 50
+ser = range(kount)
+labels = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width']
+markers =['^', 'o', 's', 'x']
+fig = pyplot.figure()
+grid_no=221
+for j in range(3):
+	ax1 = fig.add_subplot(grid_no)
+	for i in range(4):
+		ax1.scatter(ser, data1[kount*j:kount*(j+1),i], marker=markers[i], label = names[i])
+		if (j == 0): pyplot.legend()
+	grid_no+=1
+# pyplot.show()
+
+
+# pyplot.subplot(224)
+# y1c = data1[:,0]
+# y2c = data1[:,1]
+# y3c = data1[:,2]
+# y4c = data1[:,3]
+# nn = range(len(y1c))
+# pyplot.scatter(nn, y1c, marker='^')
+# pyplot.scatter(nn,y2c, marker='o')
+# pyplot.scatter(nn,y3c, marker='s')
+# pyplot.scatter(nn,y4c, marker='x')
+
+
+
+# pyplot.show()
 
 # descriptions
 print(dataset.describe())
 
 # class distribution
 print(dataset.groupby('class').size())
-
+types = dataset.groupby('class').groups.keys()
+print(types)
+data_class1 = dataset.groupby('class').groups['Iris-setosa']
+print(len(data_class1))
 # box and whisker plots
 # dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
 # pyplot.show()
@@ -97,6 +136,6 @@ for name, model in models:
 	print('%s: %f (%f)' % (name, cv_results.mean(), cv_results.std()))
 
 # Compare Algorithms
-pyplot.boxplot(results, labels=names)
-pyplot.title('Algorithm Comparison')
-pyplot.show()
+# pyplot.boxplot(results, labels=names)
+# pyplot.title('Algorithm Comparison')
+# pyplot.show()
