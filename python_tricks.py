@@ -46,5 +46,25 @@ for x in range(3):
 
 list_5 = [x**2 +y for x in [number for number in range(5)] for y in [number for number in range(10,12)]]
 
-print(list_5)
+# lambda functions, also known as ananymous functions
 
+res = list(map(lambda n: n*3 if n%2 == 0 else n*2, range(5)))
+print(res)
+
+# functions are objects
+
+def add(x,y):
+    return x+y
+
+def mult(x,y):
+    return x*y
+
+x, y = 3, 2
+functions = [add, mult]
+for function in functions:
+    function(x,y)
+    # print(function(x,y)) 
+
+#map() function iterate over a collection
+list_6 = map(add, range(4,6), range(5,7))
+print(list(list_6))
