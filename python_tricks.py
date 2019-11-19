@@ -27,3 +27,24 @@ print(max(set(test), key = test.count))
 
 snek = """ How long is the snek """
 print(snek)
+
+# List Comprehension
+
+numbers = [number for number in range(1,20)]
+evens = [number for number in numbers if number % 2 ==0]
+list_1 = [number for number in numbers if number %2 == 0 if number >10]
+list_2 = [number**2 for number in numbers if number %2 == 0 if number >10]
+list_3 = [y*x + " " + z for x in range(3) for y in ['red', 'green'] for z in ['fruit', 'vegetable']]
+
+# List_3 and list_4 are equivalent
+list_4 =[]
+for x in range(3):
+    for y in ['red', 'green']:
+        for z in ['fruit', 'vegetable']:
+            list_4.append(y*x + " " + z)
+# print(list_4)
+
+list_5 = [x**2 +y for x in [number for number in range(5)] for y in [number for number in range(10,12)]]
+
+print(list_5)
+
