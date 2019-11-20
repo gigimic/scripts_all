@@ -1,3 +1,5 @@
+from datetime import datetime
+
 # In-Place Swapping Of Two Numbers.
 x, y = 10, 20
 print(x, y)
@@ -68,3 +70,8 @@ for function in functions:
 #map() function iterate over a collection
 list_6 = map(add, range(4,6), range(5,7))
 print(list(list_6))
+
+# name a file with the time it was generated
+now = str(datetime.now()).split('.')[0].replace(' ', '_').replace(':', '_').replace('-', '_')
+filename = now+'_data.txt'
+print(filename)
