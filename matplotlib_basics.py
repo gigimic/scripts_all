@@ -41,7 +41,7 @@ data_class = [dataset.groupby('class').groups[type_class] for type_class in type
 ser = range(len(data_class[0]))
 markers =['^', 'o', 's', 'x']
 fig = plt.figure(num=2)
-grid_no=221
+grid_no=311
 for j in range(3):
 	ax1 = fig.add_subplot(grid_no)
 	for i in range(4):
