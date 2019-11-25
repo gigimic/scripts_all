@@ -64,3 +64,10 @@ B = pd.Series([1, 3, 5], index=[1, 2, 3])
 print(A + B)
 print('To get rid of NaN')
 print(A.add(B, fill_value=0))
+
+# missing data in pandas is represented by None or NaN
+# If an array has a None value you cannot perform a sum(), min()..etc., 
+# operations
+
+# If you use NaN as a missing value, you get a NaN as answer to most of your operation
+#Therefore instead of sum(), nansum() can be used
