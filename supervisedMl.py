@@ -67,9 +67,8 @@ data_class = [dataset.groupby('class').groups[type_class] for type_class in type
 
 # head
 # print(dataset.head(100))
-kount = 50
+
 ser = range(len(data_class[0]))
-labels = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width']
 markers =['^', 'o', 's', 'x']
 fig = pyplot.figure()
 grid_no=221
