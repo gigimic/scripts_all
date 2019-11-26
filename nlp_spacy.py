@@ -42,8 +42,11 @@ print(text1)
 doc5 = nlp(text1)
 
 for ent1 in doc5.ents:
-    print(ent1.text, ent1.lemma_, ent1.label_)
+    print('doc5 :', ent1.text, ent1.lemma_, ent1.label_)
 
+for word in doc5:
+    print('doc5 :', word.text)
+    # print('doc5 :', word, word.lemma_, word.label_)
 
 # for ent1 in doc5.ents:
 #     print(ent1.text, ent1.lemma_, ent.tag_, ent.dep_, ent.shape_,
