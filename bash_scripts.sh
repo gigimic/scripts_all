@@ -102,3 +102,26 @@ find /home/gigi -name calc.py
 # man 7 signal 
 # SIGINT is Ctrl C
 # there is s trap command to trap the signals given
+
+archiving and compressing files:
+to compress a file: 
+    gzip file
+to uncompress:
+    gunzip file.gz 
+
+to pack or archive multiple files:
+    tar cvf archive.tar file1 file2 ...
+
+Unpacking tar files: 
+    tar xvf archive.tar 
+Compressed archives (.tar.gz) 
+to decompress and unpack:
+    gunzip file.tar.gz 
+    tar xvf file.tar 
+both the above commands can be combined as: 
+    zcat file.tar.gz | tar xvf -
+    or 
+    tar ztvf file.tar.gz
+
+Another compression utility is bzip2 which compresses text file 
+more effectively but slowly and creates a .bz2 file.
