@@ -128,3 +128,7 @@ more effectively but slowly and creates a .bz2 file.
 
 device files are in the /dev directory
 sda1 is a disk device, a type of block device
+/dev/null is a character device
+named pipes are like character devices
+sockets are special purpose interfaces that are frequently 
+used for interprocess communication. They are outside the /dev directory
