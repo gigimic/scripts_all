@@ -125,3 +125,6 @@ both the above commands can be combined as:
 
 Another compression utility is bzip2 which compresses text file 
 more effectively but slowly and creates a .bz2 file.
+
+device files are in the /dev directory
+sda1 is a disk device, a type of block device
