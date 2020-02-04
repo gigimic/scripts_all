@@ -132,3 +132,9 @@ sda1 is a disk device, a type of block device
 named pipes are like character devices
 sockets are special purpose interfaces that are frequently 
 used for interprocess communication. They are outside the /dev directory
+ To find the sysfs location in /dev use the following
+ udevadm info --query=all --name=/dev/sda
+
+ dd is useful when working with block and character files
+ dd copies data in blocks of a fixed size
+ dd if=/dev/zero of=new_file bs=1024 count=1
