@@ -138,3 +138,15 @@ used for interprocess communication. They are outside the /dev directory
  dd is useful when working with block and character files
  dd copies data in blocks of a fixed size
  dd if=/dev/zero of=new_file bs=1024 count=1
+
+ Device Name Summary:
+ To find the name of a device (especially when partitioning a disk)
+ query udevad
+ look for the device in the /sys directory
+ guess the name from the output of the dmesg command
+ check the output of the mount command
+ run cat /proc/devices to see the block and character devices for which 
+ the system currently has drivers
+
+ hard disks: /dev/sd* 
+ 
