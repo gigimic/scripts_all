@@ -149,4 +149,8 @@ used for interprocess communication. They are outside the /dev directory
  the system currently has drivers
 
  hard disks: /dev/sd* 
- 
+ most hard disks correspond to device names such as
+ /dev/sda  /dev/sdb etc.
+ kernel makes separate device files for partitions on the disk as:
+ /dev/sda1  /dev/sda2 etc.
+
