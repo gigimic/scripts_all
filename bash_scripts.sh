@@ -154,3 +154,14 @@ used for interprocess communication. They are outside the /dev directory
  kernel makes separate device files for partitions on the disk as:
  /dev/sda1  /dev/sda2 etc.
 
+ cd and dvd drivers:
+ /dev/sr* devices are read only
+ /dev/sg0 represents write and rewrite capabilitites
+
+ PATA hard disks: /dev/hd*
+ /dev/hda /dev/hdb /dev/hdc /dev/hdd
+ 
+Terminals: /dev/tty*, /dev/pts/*, and /dev/tty
+
+
+
