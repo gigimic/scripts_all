@@ -162,6 +162,10 @@ used for interprocess communication. They are outside the /dev directory
  /dev/hda /dev/hdb /dev/hdc /dev/hdd
  
 Terminals: /dev/tty*, /dev/pts/*, and /dev/tty
+/dev/tty1  the first virtual console
+/dev/pts/0  the first pseudoterminal device
+/dev/pts  directory is a dedicated file system 
+
 
 
 
