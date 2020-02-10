@@ -166,6 +166,16 @@ Terminals: /dev/tty*, /dev/pts/*, and /dev/tty
 /dev/pts/0  the first pseudoterminal device
 /dev/pts  directory is a dedicated file system 
 
+serial ports: /dev/ttyS*
+names of USB serial adapters are
+/dev/ttyUSB0 /dev/ttyUSB1
+/dev/ttyACM0  /dev/ttyACM1 
 
+parallel ports: /dev/lp0 and /dev/lp1
+unidirectional parallel port devices are
+/dev/lp0  /dev/lp1 correspond to LPT1 LPT2..
+you can send files directly to a parallel port connected for printer
+The birectional parallel ports are 
+/dev/parport0  /dev/parport1 
 
 
