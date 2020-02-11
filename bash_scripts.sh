@@ -178,4 +178,11 @@ you can send files directly to a parallel port connected for printer
 The birectional parallel ports are 
 /dev/parport0  /dev/parport1 
 
+audio devices
+:/dev/snd/*, /dev/dsp  /dev/audio  
+
+device files can be created using the command mknod
+usually it is done with devtmpfs and udev
+
+
 
