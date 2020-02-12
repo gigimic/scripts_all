@@ -184,5 +184,11 @@ audio devices
 device files can be created using the command mknod
 usually it is done with devtmpfs and udev
 
+kernel device files: page 79
+udev, devtmpfs, udevd operation etc. are complicated 
+udevadm 
+monitoring devices:
+udevadm monitor
+udevadm monitor --kernel --subsystem-match=scsi
 
 
