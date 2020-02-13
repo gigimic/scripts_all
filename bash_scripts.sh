@@ -191,4 +191,7 @@ monitoring devices:
 udevadm monitor
 udevadm monitor --kernel --subsystem-match=scsi
 
+the driver and interface hierarchy inside the kernel 
+page 60 (how linux works: what every superuser should know)
 
+usb storage and scsi: /dev/sdf
