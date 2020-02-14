@@ -62,10 +62,14 @@ planet5.planet_details()
 # Create classes that capture bank customers and bank accounts. A customer has a first and last name. 
 # An account has a customer and a balance. Make objects for two accounts held by the same customer.
 # Inheritance of a class
+#dunder repr is used to show the details of the object
 
 class customer:
   def __init__(self, name):
     self.name = name
+  
+  def __repr__(self):
+    return "customer {}  ".format(self.name)
 
 class account_sav(customer):
   
@@ -78,9 +82,13 @@ class account_sav(customer):
   def acc_details(self):
     print('balance of {} is {}'.format(self.name, self.balance))
 
+  
+
+
 print(issubclass(account_sav, customer))
 customer1 = customer('Chandler')
 customer2 = customer('Paul')
+print(customer1)
 print(customer1.name)
 account1 = account_sav(customer1.name, 10)
 account2 = account_sav(customer1.name, 2000)
