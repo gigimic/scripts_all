@@ -66,9 +66,9 @@ class customer:
   def __init__(self, name):
     self.name = name
 
-class account:
-  def __init__(self, customer.name, balance):
-    self.name = customer.name
+class account(customer):
+  def __init__(self, balance):
+    customer.__init__(self, name)
     self.balance = balance
 
   def acc_details(self):
@@ -78,4 +78,6 @@ class account:
   customer1 = customer('Chandler')
   account1 = account(customer1.name, 1000)
   account.acc_details()
+
+
 
