@@ -61,23 +61,30 @@ planet5.planet_details()
 
 # Create classes that capture bank customers and bank accounts. A customer has a first and last name. 
 # An account has a customer and a balance. Make objects for two accounts held by the same customer.
+# Inheritance of a class
 
 class customer:
   def __init__(self, name):
     self.name = name
 
-class account(customer):
-  def __init__(self, balance):
-    customer.__init__(self, name)
+class account_sav(customer):
+  
+  def __init__(self, name, balance):
+    
+    super().__init__(name)
     self.balance = balance
-
+        
+    
   def acc_details(self):
     print('balance of {} is {}'.format(self.name, self.balance))
 
-
-  customer1 = customer('Chandler')
-  account1 = account(customer1.name, 1000)
-  account.acc_details()
-
+print(issubclass(account_sav, customer))
+customer1 = customer('Chandler')
+customer2 = customer('Paul')
+print(customer1.name)
+account1 = account_sav(customer1.name, 10)
+account2 = account_sav(customer1.name, 2000)
+account1.acc_details()
+account2.acc_details()
 
 
