@@ -195,3 +195,6 @@ the driver and interface hierarchy inside the kernel
 page 60 (how linux works: what every superuser should know)
 
 usb storage and scsi: /dev/sdf
+SCSI and ATA
+Multiple Access Methods for a Single Device
+chapter 4: disks and filesystems
