@@ -198,3 +198,10 @@ usb storage and scsi: /dev/sdf
 SCSI and ATA
 Multiple Access Methods for a Single Device
 chapter 4: disks and filesystems
+this chapter deals with how partitions are made and how to create and maintain 
+the file systems that go inside the disk partitions and how towork with the  swap space.
+/dev/sda represents the entire disk
+partitions are subdivisions of the whole disk and so named as
+/dev/sda1   /dev/sdb3 ..etc..
+kernel presents each partition as a block device.
+partitions are defined on a small area of the disk called a partition table.
