@@ -205,3 +205,11 @@ partitions are subdivisions of the whole disk and so named as
 /dev/sda1   /dev/sdb3 ..etc..
 kernel presents each partition as a block device.
 partitions are defined on a small area of the disk called a partition table.
+
+Patitioning disk devices:
+parted
+gparted
+fdisk
+gdisk
+
+4.2 filesystems
