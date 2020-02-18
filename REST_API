@@ -1,0 +1,10 @@
+API: Application Programming Interface
+API lets one software to talk to another
+REST: Representational State Transfer
+HTTP request methods
+GET
+POST
+
+REST is an architectural style as well as an approach for communications purpose 
+that is often used in various web services deployment. 
+It is often regarded as the laguage of internet. 
