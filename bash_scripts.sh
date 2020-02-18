@@ -213,3 +213,12 @@ fdisk
 gdisk
 
 4.2 filesystems
+File system is a form of database. It supplies the structure to transform 
+a simple block device to the sophisticated hierarchy of files and subdirectories 
+that users can understand.
+Earlier filesystems resided on disks. 
+The tree like directory strucrure and I/O interface of filesystems now perform 
+tasks such as system interfaces that we see in /sys and /proc.
+
+Virtual File System(VFS) abstraction layer ensures that all filesystem 
+implimentations support a Standard interface.
