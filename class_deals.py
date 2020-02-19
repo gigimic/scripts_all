@@ -94,5 +94,11 @@ account1 = account_sav(customer1.name, 10)
 account2 = account_sav(customer1.name, 2000)
 account1.acc_details()
 account2.acc_details()
-
+acc1=[]
+# acc1[0] = account_sav(customer2.name, 20)
+acc1.append(account_sav(customer2.name, 20))
+# acc1[1] = account_sav(customer2.name, 300)
+acc1.append(account_sav(customer2.name, 300))
+for acc in acc1:
+  print(acc.acc_details())
 
