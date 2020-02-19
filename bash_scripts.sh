@@ -222,3 +222,10 @@ tasks such as system interfaces that we see in /sys and /proc.
 
 Virtual File System(VFS) abstraction layer ensures that all filesystem 
 implimentations support a Standard interface.
+
+The Fourth Extended filesystem (ext4) is the current iteration of a line of
+filesystems native to Linux
+FAT filesystems(msdos, vfat) pertian to Microsoft systems. 
+most modern windows filesystems use vfat 
+
+creating a filesystem: 
