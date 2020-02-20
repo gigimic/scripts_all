@@ -229,3 +229,4 @@ FAT filesystems(msdos, vfat) pertian to Microsoft systems.
 most modern windows filesystems use vfat 
 
 creating a filesystem: 
+mkfs utility can be used to create filesystems
