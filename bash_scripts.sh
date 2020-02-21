@@ -230,3 +230,16 @@ most modern windows filesystems use vfat
 
 creating a filesystem: 
 mkfs utility can be used to create filesystems
+Filesystem creation is a task that you should only need to perform after adding a
+new disk or repartitioning an old one. You should create a filesystem just once for
+each new partition that has no preexisting data (or that has data that you want to
+remove). Creating a new filesystem on top of an existing filesystem will effectively
+destroy the old data.
+
+Mounting filesystem
+The process of attaching a filesystem is called mounting.
+When the system boots, the kernel reads some configuration data and mounts root ( / )
+based on the configuration data.
+To learn the current filesystem status of your system, run mount .
+
+Filesystem UUID
