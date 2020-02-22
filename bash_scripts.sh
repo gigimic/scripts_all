@@ -243,3 +243,5 @@ based on the configuration data.
 To learn the current filesystem status of your system, run mount .
 
 Filesystem UUID
+you can identify and mount filesystems by their Universally
+Unique Identifier (UUID), a software standard.
