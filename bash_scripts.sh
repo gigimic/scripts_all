@@ -245,3 +245,16 @@ To learn the current filesystem status of your system, run mount .
 Filesystem UUID
 you can identify and mount filesystems by their Universally
 Unique Identifier (UUID), a software standard.
+
+Disk buffering, caching, and filesystems:
+Linux buffers writes to the disk.
+The kernel usually doesn’t immediately write changes to filesystems when processes 
+request changes. Instead it stores the changes in RAM until the kernel
+can conveniently make the actual change to the disk. This buffering system
+is transparent to the user and improves performance.
+
+The kernel has a series of mechanisms that use RAM to automatically 
+cache blocks read from a disk. Therefore, if one or more processes 
+repeatedly access a file, the kernel doesn’t have to go to the disk
+again and again—it can simply read from the cache and save time and
+resources.
