@@ -92,7 +92,7 @@ else
     echo "File not found"
 fi
 
-# Find a file
+# Find a file in a directory
 find /home/gigi -name calc.py
 
 # Any variable or function can be declared readonly
@@ -103,7 +103,6 @@ find /home/gigi -name calc.py
 # SIGINT is Ctrl C
 # there is s trap command to trap the signals given
 
-# Following are commands to understand the linux OS
 # archiving and compressing files:
 # to compress a file: 
 #     gzip file
@@ -126,136 +125,3 @@ find /home/gigi -name calc.py
 
 # Another compression utility is bzip2 which compresses text file 
 # more effectively but slowly and creates a .bz2 file.
-
-# device files are in the /dev directory
-# sda1 is a disk device, a type of block device
-# /dev/null is a character device
-# named pipes are like character devices
-# sockets are special purpose interfaces that are frequently 
-# used for interprocess communication. They are outside the /dev directory
-#  To find the sysfs location in /dev use the following
-#  udevadm info --query=all --name=/dev/sda
-
-#  dd is useful when working with block and character files
-#  dd copies data in blocks of a fixed size
-#  dd if=/dev/zero of=new_file bs=1024 count=1
-
-#  Device Name Summary:
-#  To find the name of a device (especially when partitioning a disk)
-#  query udevad
-#  look for the device in the /sys directory
-#  guess the name from the output of the dmesg command
-#  check the output of the mount command
-#  run cat /proc/devices to see the block and character devices for which 
-#  the system currently has drivers
-
-#  hard disks: /dev/sd* 
-#  most hard disks correspond to device names such as
-#  /dev/sda  /dev/sdb etc.
-#  kernel makes separate device files for partitions on the disk as:
-#  /dev/sda1  /dev/sda2 etc.
-
-#  cd and dvd drivers:
-#  /dev/sr* devices are read only
-#  /dev/sg0 represents write and rewrite capabilitites
-
-#  PATA hard disks: /dev/hd*
-#  /dev/hda /dev/hdb /dev/hdc /dev/hdd
- 
-# Terminals: /dev/tty*, /dev/pts/*, and /dev/tty
-# /dev/tty1  the first virtual console
-# /dev/pts/0  the first pseudoterminal device
-# /dev/pts  directory is a dedicated file system 
-
-# serial ports: /dev/ttyS*
-# names of USB serial adapters are
-# /dev/ttyUSB0 /dev/ttyUSB1
-# /dev/ttyACM0  /dev/ttyACM1 
-
-# parallel ports: /dev/lp0 and /dev/lp1
-# unidirectional parallel port devices are
-# /dev/lp0  /dev/lp1 correspond to LPT1 LPT2..
-# you can send files directly to a parallel port connected for printer
-# The birectional parallel ports are 
-# /dev/parport0  /dev/parport1 
-
-# audio devices
-# :/dev/snd/*, /dev/dsp  /dev/audio  
-
-# device files can be created using the command mknod
-# usually it is done with devtmpfs and udev
-
-# kernel device files: page 79
-# udev, devtmpfs, udevd operation etc. are complicated 
-# udevadm 
-# monitoring devices:
-# udevadm monitor
-# udevadm monitor --kernel --subsystem-match=scsi
-
-# the driver and interface hierarchy inside the kernel 
-# page 60 (how linux works: what every superuser should know)
-
-# usb storage and scsi: /dev/sdf
-# SCSI and ATA
-# Multiple Access Methods for a Single Device
-# chapter 4: disks and filesystems
-# this chapter deals with how partitions are made and how to create and maintain 
-# the file systems that go inside the disk partitions and how towork with the  swap space.
-# /dev/sda represents the entire disk
-# partitions are subdivisions of the whole disk and so named as
-# /dev/sda1   /dev/sdb3 ..etc..
-# kernel presents each partition as a block device.
-# partitions are defined on a small area of the disk called a partition table.
-
-# Patitioning disk devices:
-# parted
-# gparted
-# fdisk
-# gdisk
-
-# 4.2 filesystems
-# File system is a form of database. It supplies the structure to transform 
-# a simple block device to the sophisticated hierarchy of files and subdirectories 
-# that users can understand.
-# Earlier filesystems resided on disks. 
-# The tree like directory strucrure and I/O interface of filesystems now perform 
-# tasks such as system interfaces that we see in /sys and /proc.
-
-# Virtual File System(VFS) abstraction layer ensures that all filesystem 
-# implimentations support a Standard interface.
-
-# The Fourth Extended filesystem (ext4) is the current iteration of a line of
-# filesystems native to Linux
-# FAT filesystems(msdos, vfat) pertian to Microsoft systems. 
-# most modern windows filesystems use vfat 
-
-# creating a filesystem: 
-# mkfs utility can be used to create filesystems
-# Filesystem creation is a task that you should only need to perform after adding a
-# new disk or repartitioning an old one. You should create a filesystem just once for
-# each new partition that has no preexisting data (or that has data that you want to
-# remove). Creating a new filesystem on top of an existing filesystem will effectively
-# destroy the old data.
-
-# Mounting filesystem
-# The process of attaching a filesystem is called mounting.
-# When the system boots, the kernel reads some configuration data and mounts root ( / )
-# based on the configuration data.
-# To learn the current filesystem status of your system, run mount .
-
-# Filesystem UUID
-# you can identify and mount filesystems by their Universally
-# Unique Identifier (UUID), a software standard.
-
-# Disk buffering, caching, and filesystems:
-# Linux buffers writes to the disk.
-# The kernel usually doesn’t immediately write changes to filesystems when processes 
-# request changes. Instead it stores the changes in RAM until the kernel
-# can conveniently make the actual change to the disk. This buffering system
-# is transparent to the user and improves performance.
-
-# The kernel has a series of mechanisms that use RAM to automatically 
-# cache blocks read from a disk. Therefore, if one or more processes 
-# repeatedly access a file, the kernel doesn’t have to go to the disk
-# again and again—it can simply read from the cache and save time and
-# resources.
