@@ -1,3 +1,7 @@
+# here a class is defined as Person 
+# its method is myfunct 
+# attributes are defined in __init__ 
+
 class Person:
 
   def __init__(self, name, age):
@@ -7,6 +11,7 @@ class Person:
   def myfunc(self):
     print("Hello my name is " + self.name)
 
+# following is an instance of the class Person 
 p1 = Person("John", 36)
 
 print(p1.name)
