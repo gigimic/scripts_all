@@ -67,6 +67,8 @@ planet5.planet_details()
 # Create classes that capture bank customers and bank accounts. A customer has a first and last name. 
 # An account has a customer and a balance. Make objects for two accounts held by the same customer.
 # Inheritance of a class
+# here account_sav is an inherited class of customer. It has
+# all the attributes of the parent class and more as defined.
 #dunder repr is used to show the details of the object
 
 class customer:
