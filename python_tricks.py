@@ -54,6 +54,7 @@ res = list(map(lambda n: n*3 if n%2 == 0 else n*2, range(5)))
 print(res)
 
 # functions are objects
+# a list of functions can be generated. 
 
 def add(x,y):
     return x+y
