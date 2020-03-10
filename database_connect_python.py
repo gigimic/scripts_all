@@ -2,6 +2,7 @@ import mysql.connector
 
 # to install mysql connector run the following:
 # pip install mysql.connector
+# to connect to a database (here testdatabase), the database has to be created earlier.
 
 db = mysql.connector.connect(
     host="localhost",
