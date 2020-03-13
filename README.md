@@ -8,6 +8,7 @@ These are for quick reference
 
 # Web Scraping
 
+Following are different web-scraping libraries in python.
 Send an HTTP request to the URL.
 The server responds to the request by returning the html content of the page.
 The library requests is used for this purpose

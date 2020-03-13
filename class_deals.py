@@ -59,6 +59,7 @@ class planets:
 planet1 = planets('Mercury', 0.3, 0.5)
 planet2 = planets('Venus', 0.6, 0.7)
 planet3 = planets('Earth', 1, 1)
+planet4 = planets('Mars', 1.5, 0.8)
 planet5 = planets('Jupiter', 2, 9)
 
 planet3.planet_details()
@@ -70,7 +71,7 @@ planet5.planet_details()
 # here account_sav is an inherited class of customer. It has
 # all the attributes of the parent class and more as defined.
 # a parent instance can have more than one child instances. 
-#dunder repr is used to show the details of the object
+# dunder repr is used to show the details of the object
 
 class customer:
   def __init__(self, name):
