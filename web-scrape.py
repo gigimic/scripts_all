@@ -4,6 +4,7 @@
 # Section 1: opening the web browser
 # section 2: downloading a web page with requests
 # section 3: saving the downloaded data to the hard drive.
+# section 4: Creating a BeautifulSoup Object from HTML
 
 # Section 1
 import webbrowser
@@ -49,3 +50,18 @@ playFile.close()
 # instead of text data in order to maintain the Unicode encoding of the text.
 # The iter_content() method returns “chunks” of the content on each iteration 
 # through the loop. Each chunk is of the bytes data type. 
+
+# section 4
+# Creating a BeautifulSoup Object from HTML
+
+import requests, bs4
+res = requests.get('https://nostarch.com')
+res.raise_for_status()
+noStarchSoup = bs4.BeautifulSoup(res.text, 'html.parser')
+type(noStarchSoup)
+
+# The bs4.BeautifulSoup() function needs to be called with a string 
+# containing the HTML it will parse. The bs4.BeautifulSoup() function 
+# returns a BeautifulSoup object. 
+# html.parser or lxml paser can be used here.
+
