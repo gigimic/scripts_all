@@ -5,6 +5,7 @@
 # section 2: downloading a web page with requests
 # section 3: saving the downloaded data to the hard drive.
 # section 4: Creating a BeautifulSoup Object from HTML
+# section 5: Opening all search results
 
 # Section 1
 import webbrowser
@@ -41,10 +42,10 @@ print('done')
 # Section 3
 # saving downloaded data to the hard drive
 
-playFile = open('RomeoAndJuliet.txt', 'wb')
-for chunk in res.iter_content(100000):
-        playFile.write(chunk)
-playFile.close()
+# playFile = open('RomeoAndJuliet.txt', 'wb')
+# for chunk in res.iter_content(100000):
+#         playFile.write(chunk)
+# playFile.close()
 
 # Even if the page is in plaintext, you need to write binary data 
 # instead of text data in order to maintain the Unicode encoding of the text.
@@ -54,14 +55,33 @@ playFile.close()
 # section 4
 # Creating a BeautifulSoup Object from HTML
 
-import requests, bs4
-res = requests.get('https://nostarch.com')
-res.raise_for_status()
-noStarchSoup = bs4.BeautifulSoup(res.text, 'html.parser')
-type(noStarchSoup)
+import  bs4
+# res = requests.get('https://nostarch.com')
+# res.raise_for_status()
+# noStarchSoup = bs4.BeautifulSoup(res.text, 'html.parser')
+# type(noStarchSoup)
 
 # The bs4.BeautifulSoup() function needs to be called with a string 
 # containing the HTML it will parse. The bs4.BeautifulSoup() function 
 # returns a BeautifulSoup object. 
 # html.parser or lxml paser can be used here.
 
+# section 5
+# Opening all search results
+import sys
+
+res = requests.get('https://google.com/search?q=' 'https://pypi.org/search/?q=' + ''.join('obama'))
+print('searching.....')
+print(res.raise_for_status())
+
+# Retrieve top search result links.
+soup = bs4.BeautifulSoup(res.text, 'html.parser')
+print(len(soup))
+# Open a browser tab for each result.
+linkElems = soup.select('.package-snippet')
+print(len(linkElems))
+numOpen = min(5, len(linkElems))
+for i in range(numOpen):
+    urlToOpen = 'https://pypi.org' + linkElems[i].get('href')
+    print('Opening', urlToOpen)
+    webbrowser.open(urlToOpen)
