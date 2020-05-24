@@ -70,7 +70,9 @@ import  bs4
 # Opening all search results
 import sys
 
-res = requests.get('https://google.com/search?q=' 'https://pypi.org/search/?q=' + ''.join('obama'))
+# res = requests.get('https://google.com/search?q=' 'https://pypi.org/search/?q=' + ' '.join('obama'))
+res = requests.get('https://google.com/search?q=' 'https://pypi.org/search/?q='
++ ' '.join(sys.argv[1:]))
 print('searching.....')
 print(res.raise_for_status())
 
@@ -81,6 +83,7 @@ print(len(soup))
 linkElems = soup.select('.package-snippet')
 print(len(linkElems))
 numOpen = min(5, len(linkElems))
+
 for i in range(numOpen):
     urlToOpen = 'https://pypi.org' + linkElems[i].get('href')
     print('Opening', urlToOpen)
