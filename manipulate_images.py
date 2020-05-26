@@ -28,7 +28,13 @@ im.save('purpleImage.png')
 im2 = Image.new('RGBA', (120, 20))
 im2.save('transparentImage.png')
 
+# rotate and flip images 
 image_zebra = Image.open('zebra.jpg')
+
+image_zebra.rotate(6).save('zebra_rotated6.png')
+image_zebra.rotate(-16, expand=True).save('zebra_rotated6_expanded.png')
+
+
 image_zebra.transpose(Image.FLIP_LEFT_RIGHT).save('zebra_horizontal_flip.png')
 image_zebra.transpose(Image.FLIP_TOP_BOTTOM).save('zebra_vertical_flip.png')
 
