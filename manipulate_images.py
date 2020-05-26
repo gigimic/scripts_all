@@ -28,5 +28,8 @@ im.save('purpleImage.png')
 im2 = Image.new('RGBA', (120, 20))
 im2.save('transparentImage.png')
 
+image_zebra = Image.open('zebra.jpg')
+image_zebra.transpose(Image.FLIP_LEFT_RIGHT).save('zebra_horizontal_flip.png')
+image_zebra.transpose(Image.FLIP_TOP_BOTTOM).save('zebra_vertical_flip.png')
 
 print('Done')
