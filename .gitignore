@@ -1,6 +1,7 @@
 __pycache__
 .~*
 *.txt
+*.bin
 *.csv
 *.db
 *.png

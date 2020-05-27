@@ -1,21 +1,21 @@
 f = open("demofile.txt", "r")
 print(f.read())
 
-Return the 5 first characters of the file:
+# Return the 5 first characters of the file:
 f = open("demofile.txt", "r")
 print(f.read(5))
 
-Read one line of the file:
+# Read one line of the file:
 f = open("demofile.txt", "r")
 print(f.readline())
 
-Loop through the file line by line:
+# Loop through the file line by line:
 f = open("demofile.txt", "r")
 for x in f:
   print(x)
 
 
-Read and write csv files
+# Read and write csv files
 import csv
 
 file_in = 'list.csv'
