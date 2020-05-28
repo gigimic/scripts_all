@@ -33,3 +33,24 @@ with open(file_out, 'w') as csvFile:
     writer = csv.writer(csvFile)
     writer.writerows(rows)
 csvFile.close()
+
+
+# Read pdf files 
+
+import PyPDF2
+pdfFileObj = open('filename.pdf', 'rb')
+pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+pdfReader.numPages   #provides the number of pages
+pageObj = pdfReader.getPage(0)
+pageObj.extractText()
+pdfFileObj.close()
+
+# decryption of pdf
+# if the pdf document is protected by a password 
+
+pdfReader = PyPDF2.PdfFileReader(open('encrypted.pdf', 'rb'))
+pdfReader.isEncrypted #provides TRUE if it is encrypted
+
+pdfReader = PyPDF2.PdfFileReader(open('encrypted.pdf', 'rb'))
+pdfReader.decrypt('password')
+pageObj = pdfReader.getPage(0)
