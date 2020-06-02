@@ -5,6 +5,8 @@
 Keep all testing scripts here
 These scripts for understanding various small concepts of the python language.
 These are for quick reference
+Sources are provided.
+
 
 # Web Scraping
 
