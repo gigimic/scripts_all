@@ -19,5 +19,15 @@
 # https://developers.google.com/sheets/api/quickstart/python/ 
 # and click the blue Enable the Google Sheets API button, 
 
+# Clicking this button will bring up a window with a Download Client Configuration link 
+# that lets you download a credentials.json file. Rename this file to credentials-sheets.json 
+# and place it in the same folder as your Python scripts.
+
+# Once you have a credentials-sheets.json file, run the import ezsheets module. 
+# The first time you import the EZSheets module, it will open a new browser window for you to log in to your Google account. 
+
+# EZSheets uses Google Drive access to upload, download, and delete spreadsheets.
+# Don’t share the credential or token files with anyone—treat them like passwords.
+
 import ezsheets
 ss = ezsheets.Spreadsheet('name')
