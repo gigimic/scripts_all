@@ -49,3 +49,20 @@ for k, v in birthdays.items():
     print('Key: ' + k + ' Value: ' + str(v))
 print('#######')
 print(list(birthdays.keys()))
+
+# Checking Whether a Key or Value Exists in a Dictionary
+print('Bob' in birthdays.keys())  #returns TRUE
+print('Kevin' in birthdays.keys()) #returns False
+
+# The get() Method dictionaries have a get() method that takes two arguments: 
+# the key of the value to retrieve and a fallback value to return if that key does not exist
+
+print('This birthday ' + str(birthdays.get('Bob', 0)) + '  belongs to '+ 'Bob.')
+
+# The setdefault() Method
+
+spam = {'name': 'Pooka', 'age': 5}
+spam.setdefault('color', 'black')
+
+print(list(spam.items()))
+
