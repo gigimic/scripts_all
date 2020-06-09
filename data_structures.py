@@ -10,5 +10,27 @@ names2 = {'species': 'cat', 'age': '8', 'name': 'Zophie'}
 print(names1 == names2)
 # The answer is True as the dictionary is unordered
 
-print(names1['color'])
+# print(names1['color'])
 # This gives a keyError just like out-of-range index errror message
+
+# dictionaried are powerful though not ordered 
+# Here we can get information from an existing dictionaries and append information 
+birthdays = {'Alice': 'Apr 1', 'Bob': 'Dec 12', 'Carol': 'Mar 4'}
+
+while True:
+    print('Enter a name: (blank to quit)')
+    name = input()
+    if name == '':
+        break
+
+    if name in birthdays:
+        print(birthdays[name] + ' is the birthday of ' + name)
+    else:
+        print('I do not have birthday information for ' + name)
+        print('What is their birthday?')
+        bday = input()
+        birthdays[name] = bday
+        print('Birthday database updated.')
+
+print(birthdays)
+
