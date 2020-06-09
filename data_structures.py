@@ -17,20 +17,35 @@ print(names1 == names2)
 # Here we can get information from an existing dictionaries and append information 
 birthdays = {'Alice': 'Apr 1', 'Bob': 'Dec 12', 'Carol': 'Mar 4'}
 
-while True:
-    print('Enter a name: (blank to quit)')
-    name = input()
-    if name == '':
-        break
+# while True:
+#     print('Enter a name: (blank to quit)')
+#     name = input()
+#     if name == '':
+#         break
 
-    if name in birthdays:
-        print(birthdays[name] + ' is the birthday of ' + name)
-    else:
-        print('I do not have birthday information for ' + name)
-        print('What is their birthday?')
-        bday = input()
-        birthdays[name] = bday
-        print('Birthday database updated.')
+#     if name in birthdays:
+#         print(birthdays[name] + ' is the birthday of ' + name)
+#     else:
+#         print('I do not have birthday information for ' + name)
+#         print('What is their birthday?')
+#         bday = input()
+#         birthdays[name] = bday
+#         print('Birthday database updated.')
 
 print(birthdays)
 
+# keys(), values(), and items() can be accessed in different ways
+
+for ones in birthdays.values():
+    print(ones)
+
+for ones in birthdays.keys():
+    print(ones)
+
+for ones in birthdays.items():
+    print(ones)
+
+for k, v in birthdays.items():
+    print('Key: ' + k + ' Value: ' + str(v))
+print('#######')
+print(list(birthdays.keys()))
