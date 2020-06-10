@@ -62,7 +62,25 @@ print('This birthday ' + str(birthdays.get('Bob', 0)) + '  belongs to '+ 'Bob.')
 # The setdefault() Method
 
 spam = {'name': 'Pooka', 'age': 5}
-spam.setdefault('color', 'black')
+spam.setdefault('color', 'black') #wherever the key 'color' doesnt exist, this statement provides one
 
 print(list(spam.items()))
+
+# The setdefault() method is a nice shortcut to ensure that a key exists. 
+# This program counts the number of occurrences of each letter in a string.
+
+message = 'It was a bright cold day in April, and the clocks were striking thirteen.'
+count = {}
+
+for character in message:
+    count.setdefault(character, 0)
+    count[character] = count[character] + 1
+
+print(count)
+# If you import the pprint module into your programs, you’ll have access to 
+# the pprint() and pformat() functions that will “pretty print” a dictionary’s values. 
+
+import pprint 
+pprint.pprint(count)
+
 
