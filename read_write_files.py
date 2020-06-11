@@ -34,6 +34,13 @@ with open(file_out, 'w') as csvFile:
     writer.writerows(rows)
 csvFile.close()
 
+# Here exampleData is a list of lists 
+
+csv_file = open('data1.csv')
+csv_reader = csv.reader(csv_file)
+exampleData = list(csv_reader)
+exampleData
+
 
 # Read pdf files 
 
@@ -54,3 +61,5 @@ pdfReader.isEncrypted #provides TRUE if it is encrypted
 pdfReader = PyPDF2.PdfFileReader(open('encrypted.pdf', 'rb'))
 pdfReader.decrypt('password')
 pageObj = pdfReader.getPage(0)
+
+
