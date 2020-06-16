@@ -7,8 +7,14 @@ import shutil, os
 
 # Permanently Deleting Files and Folders
 
-
 from pathlib import Path
-for filename in Path.home().glob('*.rxt'):
+home_folder=Path.home()
+reguired_folder = home_folder/'trial'
+for filename in reguired_folder.glob('*.txt'):
     #os.unlink(filename)
     print(filename)
+
+# os.unlink(filename) deletes the filename
+# os.rmdir(folder) deletes the folder if the folder is empty
+# shutil.rmtree(folder) will remove the folder and all files and folders it contains.
+
