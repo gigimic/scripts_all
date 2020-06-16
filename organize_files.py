@@ -1,6 +1,14 @@
 import shutil, os
-shutil.copy('data1.csv', 'data11.csv')
+# shutil.copy('data1.csv', 'data11.csv')
 # Here full path name can be given to copy files
 
-shutil.move('/path/from/file1', 'path/to') #moving files
-shutil.move('/path/from/file1', 'path/to/file2') # renaming files
+# shutil.move('/path/from/file1', 'path/to') #moving files
+# shutil.move('/path/from/file1', 'path/to/file2') # renaming files
+
+# Permanently Deleting Files and Folders
+
+
+from pathlib import Path
+for filename in Path.home().glob('*.rxt'):
+    #os.unlink(filename)
+    print(filename)
