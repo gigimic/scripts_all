@@ -37,3 +37,16 @@ for folder_name, subfolders, filenames in os.walk(reguired_folder/'testfiles'):
         print('FILE INSIDE ' + folder_name + ': '+ filename)
 
     print('')
+
+
+# Compressing Files with the zipfile Module
+
+import zipfile
+# reading contents of a zipfile 
+
+exampleZip = zipfile.ZipFile('example.zip')
+exampleZip.namelist() #provides the names of the files in the zip
+fileInfo = exampleZip.getinfo('filename')
+print(fileInfo.file_size) # provides the file size
+fileInfo.compress_size
+exampleZip.close()
