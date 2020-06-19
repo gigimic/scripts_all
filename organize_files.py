@@ -49,4 +49,10 @@ exampleZip.namelist() #provides the names of the files in the zip
 fileInfo = exampleZip.getinfo('filename')
 print(fileInfo.file_size) # provides the file size
 fileInfo.compress_size
+
+exampleZip.extractall() 
+#  The extractall() method for ZipFile objects extracts all the files and folders 
+#  from a ZIP file into the current working directory.
+exampleZip.extractall('folder name') #contnts will be extracted to the given folder
+exampleZip.extract('filename to be extracted', 'target folder name') 
 exampleZip.close()
