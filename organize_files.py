@@ -56,3 +56,14 @@ exampleZip.extractall()
 exampleZip.extractall('folder name') #contnts will be extracted to the given folder
 exampleZip.extract('filename to be extracted', 'target folder name') 
 exampleZip.close()
+
+# creating and adding to zipfiles 
+import zipfile
+# open the zipfile to be created in write mode 
+newZip = zipfile.ZipFile('new.zip', 'w')
+# compression type parameter, which tells the computer 
+# what algorithm it should use to compress the files
+# the compression type zipfile.ZIP_DEFLATED specifies 
+# the deflate compression algorithm, which works well on all types of data
+newZip.write('spam.txt', compress_type=zipfile.ZIP_DEFLATED)
+newZip.close()
