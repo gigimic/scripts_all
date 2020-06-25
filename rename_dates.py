@@ -13,8 +13,11 @@ datePattern = re.compile(r"""^(.*?) # all text before the date
 (.*?)$                          # all text after the date
 """, re.VERBOSE)
 
+# Here re.VERBOSE is used so that the comments can be written in between 
+
 # print(datePattern)
 
+# following is a test code to find all the csv files using pattern search 
 patt = re.compile('csv')
 for file in os.listdir('.'):
     mo = patt.search(file)
