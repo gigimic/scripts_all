@@ -2,6 +2,17 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s -  %(levelname)s -  %(message)s')
 logging.debug('Start of program')
 
+# logging message is passed as a string to the following functions. 
+# The logging levels are suggestions. you need to decide which category 
+# your log message falls into.
+
+logging.debug('Some debugging details.')
+logging.info('The logging module is working.')
+logging.warning('An error message is about to be logged.')
+logging.error('An error has occurred.')
+logging.critical('The program is unable to recover!')
+
+
 def factorial(n):
     logging.debug('Start of factorial(%s%%)'  % (n))
     total = 1
