@@ -1,6 +1,13 @@
 import logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s -  %(levelname)s -  %(message)s')
+logging.basicConfig(filename = 'loggingProglog.txt', level=logging.DEBUG, format='%(asctime)s -  %(levelname)s -  %(message)s')
 logging.debug('Start of program')
+
+# The filename is added to write the logging details to the file. 
+
+# When you are done with debugging, the following statement 
+# can be inserted to disable logging
+#  
+# logging.disable(logging.CRITICAL) 
 
 # logging message is passed as a string to the following functions. 
 # The logging levels are suggestions. you need to decide which category 
