@@ -1,9 +1,18 @@
 import re
 
+# finding a pattern from a string
+
 phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
 mo = phoneNumRegex.search('My number is 415-555-4242.')
 print('Phone number found: ' +  mo.group())
 
-phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
+# finding a pattern from a string as different groups
+
+phoneNumRegex = re.compile(r'(\d{3})-(\d\d\d-\d\d\d\d)')
 mo = phoneNumRegex.search('My number is 415-555-4242.')
 print('first part ',  mo.group(1))
+
+# finding a pattern from a string with repeated characters and optinal entries
+phoneNumRegex = re.compile(r'(\d{3})(-)?(\d{3}-\d{4})')
+mo = phoneNumRegex.search('My number is 415555-4242.')
+print('number   ',  mo.group(1))
