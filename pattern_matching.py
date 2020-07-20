@@ -12,7 +12,15 @@ phoneNumRegex = re.compile(r'(\d{3})-(\d\d\d-\d\d\d\d)')
 mo = phoneNumRegex.search('My number is 415-555-4242.')
 print('first part ',  mo.group(1))
 
-# finding a pattern from a string with repeated characters and optinal entries
+# finding a pattern from a string with repeated characters and optional entries
 phoneNumRegex = re.compile(r'(\d{3})(-)?(\d{3}-\d{4})')
 mo = phoneNumRegex.search('My number is 415555-4242.')
 print('number   ',  mo.group(1))
+
+# Matching Newlines with the Dot Character
+
+noNewlineRegex = re.compile('.*')
+print(noNewlineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group())
+
+newlineRegex = re.compile('.*', re.DOTALL)
+print(newlineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group())
