@@ -24,3 +24,15 @@ print(noNewlineRegex.search('Serve the public trust.\nProtect the innocent.\nUph
 
 newlineRegex = re.compile('.*', re.DOTALL)
 print(newlineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group())
+
+# Case-Insensitive Matching
+# To make your regex case-insensitive, 
+# you can pass re.IGNORECASE or re.I as 
+# a second argument to re.compile(). 
+
+robocop = re.compile(r'robocop', re.I)
+print(robocop.search('RoboCop is part man, part machine, all cop.').group())
+
+print(robocop.search('ROBOCOP protects the innocent.').group())
+
+print(robocop.search('Al, why does your programming book talk about robocop so much?').group())
