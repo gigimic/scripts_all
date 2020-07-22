@@ -36,3 +36,22 @@ print(robocop.search('RoboCop is part man, part machine, all cop.').group())
 print(robocop.search('ROBOCOP protects the innocent.').group())
 
 print(robocop.search('Al, why does your programming book talk about robocop so much?').group())
+
+
+# character classes 
+# \d  Any numeric digit from 0 to 9.
+# \D Any character that is not a numeric digit from 0 to 9.
+# \w  Any letter, numeric digit, or the underscore character. (Think of this as matching “word” characters.)
+# \W  Any character that is not a letter, numeric digit, or the underscore character.
+# \s  Any space, tab, or newline character. (Think of this as matching “space” characters.)
+# \S  Any character that is not a space, tab, or newline.
+
+
+# In the following example the regular expression \d+\s\w+ will match text that has 
+# one or more numeric digits (\d+), followed by a whitespace character (\s), 
+# followed by one or more letter/digit/underscore characters (\w+). 
+# The findall() method returns all matching strings of the regex pattern in a list.
+
+
+xmasRegex = re.compile(r'\d+\s\w+')
+print(xmasRegex.findall('12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 2 doves'))
