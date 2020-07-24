@@ -1,5 +1,14 @@
 import re
 
+# following are the functions and descriptions.
+
+# findall  :	Returns a list containing all matches
+# search	 :  Returns a Match object if there is a match anywhere in the string
+# split	 :   Returns a list where the string has been split at each match
+# sub	     :   Replaces one or many matches with a string
+
+
+
 # finding a pattern from a string
 
 phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
@@ -55,3 +64,9 @@ print(robocop.search('Al, why does your programming book talk about robocop so m
 
 xmasRegex = re.compile(r'\d+\s\w+')
 print(xmasRegex.findall('12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 2 doves'))
+
+# character class can be defined in square brackets
+robocop = re.compile('[robocop]') #each character is searched in thw string
+print(robocop.findall('RoboCop is part man, part machine, all cop.'))
+robo = re.compile('[^a-zA-Z]')
+print(robo.sub(' ', 'RoboCop is part man, part machine, all cop.').lower())

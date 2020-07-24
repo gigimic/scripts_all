@@ -67,9 +67,3 @@ newZip = zipfile.ZipFile('new.zip', 'w')
 # the deflate compression algorithm, which works well on all types of data
 newZip.write('spam.txt', compress_type=zipfile.ZIP_DEFLATED)
 newZip.close()
-
-# Renaming Files with American-Style Dates to European-Style Dates
-# 1.Create a regex that can identify the text pattern of American-style dates.
-# 2.Call os.listdir() to find all the files in the working directory.
-# 3.Loop over each filename, using the regex to check whether it has a date.
-# 4.If it has a date, rename the file with shutil.move().
