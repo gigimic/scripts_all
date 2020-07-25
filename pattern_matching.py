@@ -68,5 +68,7 @@ print(xmasRegex.findall('12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 2 
 # character class can be defined in square brackets
 robocop = re.compile('[robocop]') #each character is searched in thw string
 print(robocop.findall('RoboCop is part man, part machine, all cop.'))
+
+# The following replaces every character except alphabets to space 
 robo = re.compile('[^a-zA-Z]')
-print(robo.sub(' ', 'RoboCop is part man, part machine, all cop.').lower())
+print(robo.sub(' ', 'RoboCop 2 is part man, part machine 6, all cop!!!').lower())
