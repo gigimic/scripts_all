@@ -72,3 +72,11 @@ print(robocop.findall('RoboCop is part man, part machine, all cop.'))
 # The following replaces every character except alphabets to space 
 robo = re.compile('[^a-zA-Z]')
 print(robo.sub(' ', 'RoboCop 2 is part man, part machine 6, all cop!!!').lower())
+
+# matching specific repetitions with braces 
+haRegex = re.compile(r'(Ha){3}')
+mo1 = haRegex.search('HaHaHa')
+print(mo1.group())
+
+mo2 = haRegex.search('Ha')
+print(mo2)
