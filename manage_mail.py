@@ -13,5 +13,19 @@ import ezgmail, os
 os.chdir(r'C:\path\to\credentials_json_file')
 ezgmail.init()
 
-Sending Mail from a Gmail Account
+# Sending Mail from a Gmail Account
 ezgmail.send('recipient@example.com', 'Subject line', 'Body of the email')
+
+# adding cc and bcc to messages
+ezgmail.send('recipient@example.com', 'Subject line', 'Body of the email',
+cc='friend@example.com', bcc='otherfriend@example.com,someoneelse@example.com')
+
+# If you need to remember which Gmail address the token.json file 
+# is configured for, you can examine ezgmail.EMAIL_ADDRESS. 
+
+ezgmail.init()
+ezgmail.EMAIL_ADDRESS
+
+# reading mail from gmail account
+nreadThreads = ezgmail.unread() # List of GmailThread objects.
+ezgmail.summary(unreadThreads)
