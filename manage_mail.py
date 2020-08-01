@@ -27,5 +27,21 @@ ezgmail.init()
 ezgmail.EMAIL_ADDRESS
 
 # reading mail from gmail account
-nreadThreads = ezgmail.unread() # List of GmailThread objects.
+unreadThreads = ezgmail.unread() # List of GmailThread objects.
 ezgmail.summary(unreadThreads)
+
+len(unreadThreads)
+
+str(unreadThreads[0])
+len(unreadThreads[0].messages)
+
+str(unreadThreads[0].messages[0])
+
+unreadThreads[0].messages[0].subject
+
+unreadThreads[0].messages[0].body
+unreadThreads[0].messages[0].timestamp
+datetime.datetime(2018, 12, 9, 13, 28, 48)
+unreadThreads[0].messages[0].sender
+
+unreadThreads[0].messages[0].recipient
