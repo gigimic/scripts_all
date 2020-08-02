@@ -38,10 +38,15 @@ len(unreadThreads[0].messages)
 str(unreadThreads[0].messages[0])
 
 unreadThreads[0].messages[0].subject
-
 unreadThreads[0].messages[0].body
 unreadThreads[0].messages[0].timestamp
-datetime.datetime(2018, 12, 9, 13, 28, 48)
 unreadThreads[0].messages[0].sender
-
 unreadThreads[0].messages[0].recipient
+
+# Provider, and SMTP server domain name
+# Gmail*     smtp.gmail.com
+# Outlook.com/Hotmail.com*    smtp-mail.outlook.com
+# Yahoo Mail*   smtp.mail.yahoo.com
+# AT&T   smpt.mail.att.net (port 465)
+# Comcast  smtp.comcast.net
+# Verizon  smtp.verizon.net (port 465)
