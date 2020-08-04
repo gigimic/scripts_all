@@ -38,4 +38,16 @@ print('Your age is  :',  response)
 
 # Here blank is an option
 response = pyip.inputNum('Enter a number :  ', blank=True)
+
+# This input wont accept even numbers 
+response = pyip.inputNum(blockRegexes=[r'[02468]$'])
  
+# Here the input accepts only yes or no  
+prompt = 'Want to go to London?\n'
+response = pyip.inputYesNo(prompt)
+if response == 'no':
+    print('so sad')
+else:
+    print('lets go')
+
+print('Thank you. Have a nice day.')
