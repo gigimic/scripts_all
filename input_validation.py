@@ -51,3 +51,7 @@ else:
     print('lets go')
 
 print('Thank you. Have a nice day.')
+
+# Here input should be an integer 
+response = pyip.inputInt('Enter an integer greater than 0:  ', min = 1)
+print('the number is  :  ', response)
