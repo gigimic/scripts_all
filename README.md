@@ -39,9 +39,11 @@ preserve user sessions, follow redirects, and handle output pipelines.
 
 Create a fresh virtualenv using Python 3:
 $ python3 -m venv ./venv
+$ python3 -m venv dir/venv
 
 Activating a virtualenv 
 source ./venv/bin/activate
+source dir/venv/bin/activate
 
 insall new libraries to the virtual environment 
 (venv) $ pip install requests
@@ -51,3 +53,7 @@ pip install requests && pip freeze > requirements.txt
 
 To get back to the global Python environment, run the following command:
 (venv) $ deactivate
+
+if you have a requirement.txt file for all the libraries and dependencies
+pip install -r requirement.txt
+

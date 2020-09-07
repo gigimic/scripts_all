@@ -44,5 +44,6 @@ fig.colorbar(surf, shrink=0.5, aspect=5)
 # plt.show()
 
 
-plt.savefig("surface_sineplot.pdf", dpi=150)
-plt.savefig("surface_sineplot.eps", dpi=150)
+# plt.savefig("surface_sineplot.pdf", dpi=150)
+# plt.savefig("surface_sineplot.eps", dpi=150)
+plt.savefig("surface_sineplot.jpg", dpi=150)
