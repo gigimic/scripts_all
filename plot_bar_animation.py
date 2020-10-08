@@ -8,44 +8,44 @@ data = pd.read_csv('covid19.csv', index_col='dateRep', parse_dates=['dateRep'])
 # exampleData = list(csv_reader)
 # exampleData
 # print(data.head())
-s = data.loc['01/10/2020']
+# s = data.loc['01/10/2020'].sort_values(by=['cases'], ascending=False)
+# s = data.loc['01/10/2020']
 # print(s.index, s.countriesAndTerritories, s.cases, s.deaths)
-countries = s.countriesAndTerritories
-cases = s.cases
-print(countries)
-print(s.nlargest(5, ['cases']))
-# datewise = pd.DataFrame({
-#     'countries': [s.countriesAndTerritories],
-#     'cases': [s.cases],
-#     'deaths': [s.deaths]
-# })
+# countries = s.countriesAndTerritories
+# cases = s.cases
+# print(countries)
+# print(s.nlargest(5, ['cases']))
 
-# sorted=datewise.sort_values(by=['cases'])
-# print(datewise.sort_values(by=['cases']).loc[:5])
-# df.sort_values("col3", axis = 0, ascending = True)
-# print(df.head())
-# print(df.info(verbose=True))
 
-# print(len(s.countriesAndTerritories))
-# print(len(s.cases))
 
-# # print(s.countriesAndTerritories)
-# print(s.cases.sort[:2])
-
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 # fig, ax = plt.subplots(figsize=(4, 2.5), dpi=144)
-# colors = plt.cm.Dark2(range(6))
-# y = countries[:10]
-# width = cases[:10]
+colors = plt.cm.Dark2(range(6))
+# y = s.countriesAndTerritories[:10]
+# width = s.cases[:10]
 # ax.barh(y=y, width=width, color=colors)
 # plt.show()
 
-# def nice_axes(ax):
-#     ax.set_facecolor('.8')
-#     ax.tick_params(labelsize=8, length=0)
-#     ax.grid(True, axis='x', color='white')
-#     ax.set_axisbelow(True)
-#     [spine.set_visible(False) for spine in ax.spines.values()]
+# data.loc['01/10/2020'].cases.rank(method='first')
+# dates = ['01/10/2020', '25/09/2020', '20/09/2020']
+# datewise ={}
+# for date in dates:
+#     datewise.date = date
+
+def nice_axes(ax):
+    ax.set_facecolor('.8')
+    ax.tick_params(labelsize=8, length=0)
+    ax.grid(True, axis='x', color='white')
+    ax.set_axisbelow(True)
+    [spine.set_visible(False) for spine in ax.spines.values()]
     
-# nice_axes(ax)
-# fig
+fig, ax_array = plt.subplots(nrows=1, ncols=3, figsize=(7, 2.5), 
+                             dpi=144, tight_layout=True)
+dates = ['01/10/2020', '25/09/2020', '20/09/2020']
+for ax, date in zip(ax_array, dates):
+    s = data.loc[date].sort_values(by=['cases'], ascending=False)
+    ax.barh(y=s.countriesAndTerritories.iloc[0:6], width=s.cases.iloc[0:6], color=colors)
+    ax.set_title(date, fontsize='smaller')
+    nice_axes(ax)
+
+plt.show()
