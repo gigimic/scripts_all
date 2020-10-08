@@ -10,23 +10,35 @@ data = pd.read_csv('covid19.csv', index_col='dateRep', parse_dates=['dateRep'])
 # print(data.head())
 s = data.loc['01/10/2020']
 # print(s.index, s.countriesAndTerritories, s.cases, s.deaths)
+countries = s.countriesAndTerritories
+cases = s.cases
+print(countries)
+print(s.nlargest(5, ['cases']))
+# datewise = pd.DataFrame({
+#     'countries': [s.countriesAndTerritories],
+#     'cases': [s.cases],
+#     'deaths': [s.deaths]
+# })
 
-df = pd.DataFrame({
-    'col1': [s.index],
-    'col2': [s.countriesAndTerritories],
-    'col3': [s.cases],
-    'col4': [s.deaths]
-})
-print(df.head())
+# sorted=datewise.sort_values(by=['cases'])
+# print(datewise.sort_values(by=['cases']).loc[:5])
+# df.sort_values("col3", axis = 0, ascending = True)
+# print(df.head())
+# print(df.info(verbose=True))
 
+# print(len(s.countriesAndTerritories))
+# print(len(s.cases))
 
-# print(s.cases)
+# # print(s.countriesAndTerritories)
+# print(s.cases.sort[:2])
+
 # import matplotlib.pyplot as plt
 # fig, ax = plt.subplots(figsize=(4, 2.5), dpi=144)
 # colors = plt.cm.Dark2(range(6))
-# y = s.index
-# width = s.values
+# y = countries[:10]
+# width = cases[:10]
 # ax.barh(y=y, width=width, color=colors)
+# plt.show()
 
 # def nice_axes(ax):
 #     ax.set_facecolor('.8')
