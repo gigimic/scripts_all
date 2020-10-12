@@ -26,19 +26,19 @@ colors = plt.cm.Dark2(range(6))
 # ax.barh(y=y, width=width, color=colors)
 # plt.show()
 
-df = pd.DataFrame(columns = ['Name', 'Articles', 'Improved'],  
-                   index = ['a', 'b', 'c']) 
+# df = pd.DataFrame(columns = ['Name', 'Articles', 'Improved'],  
+#                    index = ['a', 'b', 'c']) 
 
 # data.loc['01/10/2020'].cases.rank(method='first')
 # datewise = pd.DataFrame() 
 dates = ['01/10/2020', '25/09/2020', '20/09/2020']
-s = data.loc[dates[0]]
-df2 = pd.DataFrame(columns = [s.countriesAndTerritories], index = dates)
-for date in dates:
-    s = data.loc[date]
-    # df2 = pd.DataFrame({'date': date, 'cases': 1})
-    df2.loc[date] = [s.cases] 
-    # datewise.append(df2)
+s1 = data.loc[dates[0]]
+df2 = pd.DataFrame(columns = [s1.countriesAndTerritories], index = dates)
+# for date in dates:
+#     s = data.loc[date]
+#     # df2 = pd.DataFrame({'date': date, 'cases': 1})
+#     df2.loc[date] = [s.cases] 
+#     # datewise.append(df2)
 
 # print(df2)
 print(df2.size)
@@ -54,10 +54,20 @@ fig, ax_array = plt.subplots(nrows=1, ncols=3, figsize=(7, 2.5),
                              dpi=144, tight_layout=True)
 # dates = ['01/10/2020', '25/09/2020', '20/09/2020']
 for ax, date in zip(ax_array, dates):
-    # s = df2.loc[date].sort_values(by=['cases'], ascending=False)
-    s = df2.loc[date].sort_values()
+    s = data.loc[date].sort_values(by=['cases'], ascending=False)
+    # s = data.loc[date].sort_values()
+    print(s.nlargest(5, ['cases']))
     ax.barh(y=s.countriesAndTerritories.iloc[0:6], width=s.cases.iloc[0:6], color=colors)
     ax.set_title(date, fontsize='smaller')
     nice_axes(ax)
+    s1 = data.loc[date]
+    df2.loc[date] = [s1.cases] 
 
-plt.show()
+# changing cols with rename() 
+df2.rename(columns = {'Afghanistan': 'Af', "United_States_of_America": "USA"}, inplace = True) 
+
+print(df2.ndim)
+print(df2.shape)
+print(df2.index)
+print(df2.columns)
+# plt.show()
