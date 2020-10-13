@@ -7,6 +7,6 @@ __pycache__
 *.png
 *.jpg
 *.jpeg
-.ipynb*
+*.ipynb*
 *.pdf
 *.eps

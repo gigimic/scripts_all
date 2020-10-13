@@ -41,7 +41,7 @@ df2 = pd.DataFrame(columns = [s1.countriesAndTerritories], index = dates)
 #     # datewise.append(df2)
 
 # print(df2)
-print(df2.size)
+# print(df2.size)
 
 def nice_axes(ax):
     ax.set_facecolor('.8')
@@ -56,18 +56,22 @@ fig, ax_array = plt.subplots(nrows=1, ncols=3, figsize=(7, 2.5),
 for ax, date in zip(ax_array, dates):
     s = data.loc[date].sort_values(by=['cases'], ascending=False)
     # s = data.loc[date].sort_values()
-    print(s.nlargest(5, ['cases']))
-    ax.barh(y=s.countriesAndTerritories.iloc[0:6], width=s.cases.iloc[0:6], color=colors)
+    # print(s.nlargest(5, ['cases']))
+    # ax.barh(y=s.countriesAndTerritories.iloc[0:6], width=s.cases.iloc[0:6], color=colors)
+    ax.barh(y=s.countriesAndTerritories, width=s.cases, color=colors)
+    
     ax.set_title(date, fontsize='smaller')
+    # ax1.set_xlim([0, 100])
+    ax.set_xlim([50000, 95000])
     nice_axes(ax)
     s1 = data.loc[date]
     df2.loc[date] = [s1.cases] 
 
 # changing cols with rename() 
-df2.rename(columns = {'Afghanistan': 'Af', "United_States_of_America": "USA"}, inplace = True) 
+df2.rename(columns = {"United_States_of_America": "USA", 'United_States_Virgin_Islands': 'USVI'}, inplace = True) 
 
 print(df2.ndim)
 print(df2.shape)
 print(df2.index)
-print(df2.columns)
-# plt.show()
+# print(df2.columns)
+plt.show()
