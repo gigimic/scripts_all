@@ -16,7 +16,10 @@ for date in dates:
 
 df2.rename(columns = {"United_States_of_America": "USA", 'United_States_Virgin_Islands': 'USVI'}, inplace = True) 
 
+dates3 = data.iloc[:3].index
+
+
 # print(df2.ndim)
-# print(df2.shape)
-# print(df2.index)
+print(df2.shape)
+print(df2.index)
 # print(df2.columns)
