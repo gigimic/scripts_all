@@ -39,20 +39,20 @@ def nice_axes(ax):
     
 fig, ax_array = plt.subplots(nrows=1, ncols=3, figsize=(7, 2.5), 
                              dpi=144, tight_layout=True)
-# dates = ['01/10/2020', '25/09/2020', '20/09/2020']
-# for ax, date in zip(ax_array, dates3):
-    # s2 = df2.loc[date].sort_values(axis = 1, ascending=False)
-    # print(dates3.loc[date].values)
-    # s = df2.loc[date].sort_values(by=['cases'], axis = 1, ascending=False)
-    # print(dates3.loc[date].values)
-    # ax.barh(y=s.index, width=s.values, color=colors)
-    # print(s.nlargest(5, ['cases']))
-    # ax.barh(y=s.countriesAndTerritories.iloc[0:6], width=s.cases.iloc[0:6], color=colors)
-    # ax.barh(y=s.countriesAndTerritories, width=s.cases, color=colors)
+dates = ['01/10/2020', '25/09/2020', '20/09/2020']
+for ax, date in zip(ax_array, dates3):
+    s2 = df2.loc[date].sort_values(axis = 1, ascending=False)
+    print(dates3.loc[date].values)
+    s = df2.loc[date].sort_values(by=['cases'], axis = 1, ascending=False)
+    print(dates3.loc[date].values)
+    ax.barh(y=s.index, width=s.values, color=colors)
+    print(s.nlargest(5, ['cases']))
+    ax.barh(y=s.countriesAndTerritories.iloc[0:6], width=s.cases.iloc[0:6], color=colors)
+    ax.barh(y=s.countriesAndTerritories, width=s.cases, color=colors)
     
-    # ax.set_title(date, fontsize='smaller')
-    # ax1.set_xlim([0, 100])
-    # ax.set_xlim([50000, 95000])
-    # nice_axes(ax)
+    ax.set_title(date, fontsize='smaller')
+    ax1.set_xlim([0, 100])
+    ax.set_xlim([50000, 95000])
+    nice_axes(ax)
 
-# plt.show()
+plt.show()
