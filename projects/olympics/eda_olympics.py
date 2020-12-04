@@ -14,9 +14,14 @@ data = pd.read_csv('Summer-Olympic-medals-1976-to-2008.csv', encoding='latin-1')
 
 filt_athlete = data['Athlete'].str.contains('PAES', na = False)
 print(data.loc[filt_athlete, ['Athlete', 'Country', 'Medal']])
-df = data['Country'].value_counts().sort_values(ascending=False)
-top_15 = df[:15]
-top_15.plot(kind='bar',figsize=(10,4))
-plt.xticks(rotation=75)
-plt.title('All Time Medals of top 15 countries')
-plt.show()
+
+# df = data['Country'].value_counts().sort_values(ascending=False)
+# top_15 = df[:15]
+# top_15.plot(kind='bar',figsize=(10,4))
+# plt.xticks(rotation=75)
+# plt.title('All Time Medals of top 15 countries')
+# plt.show()
+
+medals_country = data.groupby('Year')
+y1976 = medals_country.get_group(1976.0)['Country'].agg('count')
+print(y1976)  
