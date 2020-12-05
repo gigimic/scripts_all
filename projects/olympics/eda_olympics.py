@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('Summer-Olympic-medals-1976-to-2008.csv', encoding='latin-1')
 # data.shape
 # rows = 15433, columns= 11
-# data.head(12)
+# data.head(10)
 
 filt_athlete = data['Athlete'].str.contains('PAES', na = False)
 print(data.loc[filt_athlete, ['Athlete', 'Country', 'Medal']])
@@ -25,3 +25,5 @@ print(data.loc[filt_athlete, ['Athlete', 'Country', 'Medal']])
 medals_country = data.groupby('Year')
 y1976 = medals_country.get_group(1976.0)['Country'].agg('count')
 print(y1976)  
+
+years = data['year'].unique
