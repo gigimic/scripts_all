@@ -24,6 +24,15 @@ print(data.loc[filt_athlete, ['Athlete', 'Country', 'Medal']])
 
 medals_country = data.groupby('Year')
 y1976 = medals_country.get_group(1976.0)['Country'].agg('count')
-print(y1976)  
+# print(y1976)  
 
-years = data['year'].unique
+# years = data['year'].unique
+
+# medals_country = data.groupby('Year')
+# y1976 = medals_country.get_group(1976.0)['Country'].agg('count')
+# y1976 = medals_country.get_group(1976.0)[['Country','Medal']]
+y1976 = medals_country.get_group(1976.0)['Country']
+# print(y1976)  
+# y1976.nlargest(10, 'Medal')
+# print(medals_country['Medal'].count())
+print(y1976.value_counts().head(10))
