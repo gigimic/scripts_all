@@ -36,3 +36,23 @@ y1976 = medals_country.get_group(1976.0)['Country']
 # y1976.nlargest(10, 'Medal')
 # print(medals_country['Medal'].count())
 print(y1976.value_counts().head(10))
+
+years = data['Year'].unique()
+years = [x for x in years if str(x) != 'nan']
+
+for index, year in enumerate(years):
+    per_year = data.groupby('Year')
+    year_group = per_year.get_group(year)['Country']
+    print(year)
+    print(year_group.value_counts().head(3))
+
+
+
+# for index, year in enumerate(years):
+#     peryear = data[data['Year']==year]
+#     yearcountry = peryear['Country'].value_counts().sort_values(ascending=False)
+#     yearcountry[:10].plot(kind='bar',figsize=(10,4), legend=False)
+#     plt.title(year)
+#     plt.xticks(rotation=45)
+#     plt.show()
+    
