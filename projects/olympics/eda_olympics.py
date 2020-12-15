@@ -40,19 +40,22 @@ print(y1976.value_counts().head(10))
 years = data['Year'].unique()
 years = [x for x in years if str(x) != 'nan']
 
-for index, year in enumerate(years):
-    per_year = data.groupby('Year')
-    year_group = per_year.get_group(year)['Country']
-    print(year)
-    print(year_group.value_counts().head(3))
-
-
-
 # for index, year in enumerate(years):
-#     peryear = data[data['Year']==year]
-#     yearcountry = peryear['Country'].value_counts().sort_values(ascending=False)
-#     yearcountry[:10].plot(kind='bar',figsize=(10,4), legend=False)
-#     plt.title(year)
-#     plt.xticks(rotation=45)
-#     plt.show()
+#     per_year = data.groupby('Year')
+#     year_group = per_year.get_group(year)['Country']
+#     print(year)
+#     print(year_group.value_counts().head(3))
+
+
+
+for index, year in enumerate(years):
+    peryear = data[data['Year']==year]
+    yearcountry = peryear['Country'].value_counts().sort_values(ascending=False)
+    plt.subplot(3, 3, index+1)
+    # yearcountry[:10].plot(kind='bar',figsize=(10,4), legend=False)
+    yearcountry[:5].plot(kind='bar', figsize=(3,2), legend=False)
+    plt.title(year)
+    plt.xticks(rotation=10)
+    
+plt.show()
     
