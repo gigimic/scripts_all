@@ -111,3 +111,10 @@ acc1.append(account_sav(customer2.name, 300))
 for acc in acc1:
   print(acc.acc_details())
 
+class Purchase:
+    def __init__(self, basket, buyer):
+        self.basket = list(basket)
+        self.buyer = buyer
+
+purchase = Purchase(['pen', 'book', 'pencil'], 'Python')
+print(len(purchase.basket))
