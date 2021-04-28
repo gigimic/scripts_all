@@ -9,5 +9,5 @@
 
 import math
 print(math.log(1/4,2))
-a = -0.5*math.log(0.5,10)-0.5*math.log(0.5,2)
+a = -0.5*math.log(0.5,2)-0.5*math.log(0.5,2)
 print(a)
