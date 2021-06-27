@@ -11,11 +11,11 @@ mylist = [x*x for x in range(3)]
 for i in mylist:
     print('list ', i)
 print(mylist)
+
 # following is a generator and can be used only once
 mygenerator = (x*x for x in range(3))
 for i in mygenerator:
     print('generator ', i)
-
 
 # Here you can see that generator is an object
 def create_generator():
