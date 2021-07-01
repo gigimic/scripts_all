@@ -84,3 +84,8 @@ print('sorted array is : ', np.sort(a7))
 #nearest neighbours can be found
 #structured arrays
 
+# linear algebra
+# matrix multiplication
+a8 = np.ones((2,3)) #2,3 matrix of onews
+b8 = n.full((3,2), 2) # 3,2 matrix of twos
+c8 = np.matmul(a,b) # gets a 2,2 matrix of a8 * b8

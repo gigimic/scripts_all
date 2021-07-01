@@ -20,7 +20,8 @@ for sheet in wb:
 
 wb1 = wb['PolicyData']
 for i in range(1,wb1.max_row+1):
-    for j in range(1,2):
+    print('row number .. ', i)
+    for j in range(1,3):
         # for j in range(1,wb1.max_column+1):
         cell_obj = wb1.cell(row = i, column = j)
         print(cell_obj.value)
