@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(df.drop('target', axis = 'columns'), df.target, test_size = 0.3)
 
 from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix, accuracy_score, f1_score
 
 # using rbf kernel
 
@@ -22,6 +22,15 @@ print(len(X_train), len(X_test))
 rbf_model.fit(X_train,y_train)
 print('training score ....', rbf_model.score(X_train, y_train))
 print('test score ... ', rbf_model.score(X_test, y_test))
+y_pred = rbf_model.predict(X_test)
+cm = confusion_matrix(y_test, y_pred)
+acc = accuracy_score(y_test, y_pred)
+f1score = f1_score(y_test, y_pred, average ='micro')
+
+print('confusiotn matrix..\n',cm)
+print('accuracy... ', acc)
+print('Fi score...  ', f1score)
+
 
 # using linear kernel
 
