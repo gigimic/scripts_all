@@ -1,6 +1,9 @@
 import pandas as pd
 import csv
 
+# Kaggle data is used here 
+# SVM model with kernel = 'rbf' is used to predict the digits
+
 dig_data = pd.read_csv('train.csv')
 df = pd.DataFrame(dig_data)
 

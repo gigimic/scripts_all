@@ -65,6 +65,20 @@ print(A + B)
 print('To get rid of NaN')
 print(A.add(B, fill_value=0))
 
+
+# to select certain columns from  dataframe df
+select_features = ['colname_1', 'colname_2', 'colname_3']
+select_df =  df(select_features)
+
+# to find the unique values in the categorical feature 
+print(df['col_name'].unique)
+# to add a new column derived from other two columns in the same df
+df['new_column'] = df['colname_2']-df['colname_1']
+
+# to get all the column names
+col_names = df.columns
+print(col_names)
+
 # missing data in pandas is represented by None or NaN
 # If an array has a None value you cannot perform a sum(), min()..etc., 
 # operations
