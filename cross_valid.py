@@ -43,3 +43,36 @@ print(scores.mean())
 # to keep track of separate training and validation sets. So, especially for 
 # small datasets, it's a good improvement!
 
+# exercise
+def get_score(n_estimators):
+    """Return the average MAE over 3 CV folds of random forest model.
+    
+    Keyword argument:
+    n_estimators -- the number of trees in the forest
+    """
+        
+    my_pipeline = Pipeline(steps=[
+        ('preprocessor', SimpleImputer()),
+        ('model', RandomForestRegressor(n_estimators, random_state=0))
+    ])
+    scores = -1 * cross_val_score(my_pipeline, X, y,
+                              cv=3,
+                              scoring='neg_mean_absolute_error')
+
+    print("Average MAE score:", scores.mean())
+    return scores.mean()
+
+
+# run the code for different n_estimators value
+results = {}
+for i in range (1,9):
+    results[i*50] = get_score(i*50) 
+
+# visualization
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+plt.plot(list(results.keys()), list(results.values()))
+plt.show()
+
+# gridsearchCV is used efficiently in hyperparameter optimization
