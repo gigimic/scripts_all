@@ -85,3 +85,6 @@ print(col_names)
 
 # If you use NaN as a missing value, you get a NaN as answer to most of your operation
 #Therefore instead of sum(), nansum() can be used
+
+print(df[col].unique()) #prints all the unique values of col
+print(features.value_counts(col)) #prints counts of each unique value
