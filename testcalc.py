@@ -8,6 +8,6 @@
 # print(loss)
 
 import math
-print(math.log(1/4,2))
+print(f"log of 1/4 is {math.log(1/4,2)}")
 a = -0.5*math.log(0.5,2)-0.5*math.log(0.5,2)
-print(a)
+print(f" the value of  a is {a} final")
